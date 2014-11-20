@@ -53,34 +53,38 @@ public class JPalette
 			if (tok.length == 0) {
 				System.out.println("Bad command!");
 			} else if (tok.length == 1) {
+         
 				// Commands having no parameters
 				String cmd = tok[0];
-				switch (cmd) {
-				case "p":
-					System.out.println(sw);
-					break;
-				case "rgb":
-					System.out.println(sw
-						.toStringInModel(Model.RGB));
-					break;
-				case "cymk":
-					System.out.println(sw
-						.toStringInModel(Model.CYMK));
-					break;
-				case "hex":
-					System.out.println(sw
-						.toStringInModel(Model.HEX));
-					break;
-				case "s":
+            
+            
+            if (cmd.equals("p")) {
+            
+               System.out.println(sw);
+            }
+            else if (cmd.equals("rgb")) {
+            
+               System.out.println(sw.toStringInModel(Model.RGB));
+            }
+            else if (cmd.equals("hex")) {
+            
+               System.out.println(sw.toStringInModel(Model.HEX));
+            }
+            else if (cmd.equals("s")) {
+            
 					if (sw.save()) {
 						System.out.println("Saved");
 					}
-					break;
-				case "q":
-					break quit;
-				default:
-					System.out.println("Bad command!");
-				}
+            }
+            else if (cmd.equals("q")) {
+            
+               return
+            }
+            else {
+            
+               System.out.println("Bad command!");
+            }
+            
 			} else {
 				// Commands having one parameter
 				Color c;
