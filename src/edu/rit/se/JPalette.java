@@ -45,6 +45,8 @@ public class JPalette
 		BufferedReader r;
 		r = new BufferedReader(new InputStreamReader(System.in));
 
+      int a = 0;
+
 		String line;
 		quit: while ((line = r.readLine()) != null) {
 			String[] tok = line.trim().split("\\s+");
