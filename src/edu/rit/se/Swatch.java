@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
+import java.util.ArrayList;
 
 /**
  * <p>
@@ -61,7 +62,13 @@ public class Swatch
 	{
 		/* Implement this */
 
-		return true;
+      if(!contains(c)) {
+         
+         colors.add(c);
+         return true;
+      }
+
+		return false;
 	}
 
 	/**
@@ -75,7 +82,17 @@ public class Swatch
 	{
 		/* Implement this */
 		
-		return false;
+      boolean bool = false;
+      
+      for(Color c_match : colors) {
+         
+         if(c_match == c) {
+            bool = true;
+         }
+      }
+      
+      
+		return bool;
 	}
 
 	/**
@@ -91,7 +108,27 @@ public class Swatch
 	{
 		/* Implement this */
 		
-		return null;
+      ArrayList<Color> new_colors = new ArrayList<Color>();
+      Color removed = Color();
+      
+      for(Color c_remove : colors) {
+      
+         if(c_remove != c) {
+            
+            new_colors.add(c_remove);
+         }
+         else {
+            removed = c_remove;
+         }
+      }
+      
+      if (colors == new_colors) {
+      
+         return null;
+      }
+      
+      colors = new_colors;
+      return removed;
 	}
 
 	@Override
