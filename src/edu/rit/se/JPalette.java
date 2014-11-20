@@ -11,7 +11,7 @@ import edu.rit.se.Swatch.Model;
  * The JPalette is a command line tool showcasing the use of the {@link Swatch}
  * </p>
  * 
- * @author Steven Kroh (skk8768)
+ * @author Ryan Hoffmann (rch4495)
  */
 public class JPalette
 {
